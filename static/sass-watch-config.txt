@@ -1,0 +1,3 @@
+# watch command executed
+
+sass --watch /home/will/will-site-project/will-site/will_site_main/static/src/scss/style.scss:/home/will/will-site-project/will-site/will_site_main/static/dist/css/style.css

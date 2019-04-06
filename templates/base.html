@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--
+Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Contact: https://hencework.ticksy.com/
+License: You must have a valid license purchased only from themeforest to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>W.Dodge</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+	<!-- Lightgallery CSS -->
+    <link href="{% static 'dist/css/lightgallery.css' %}"  rel="stylesheet" type="text/css">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static 'vendors/morris.js/morris.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Toggles CSS -->
+    <link href="{% static 'vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Toastr CSS -->
+    <link href="{% static 'vendors/jquery-toast-plugin/dist/jquery.toast.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'dist/css/style.css' %}"  rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+    <!-- HK Wrapper -->
+    <div class="hk-wrapper hk-alt-nav hk-landing">
+		<div class="fixed-top bg-white shadow-sm">
+			<div class="container px-0">
+				<nav class="navbar navbar-expand-xl navbar-light hk-navbar hk-navbar-alt shadow-none">
+					<a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false" aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
+					<a class="navbar-brand" href="{% url 'pages:index' %}">
+						<img class="brand-img d-inline-block align-top" src="{% static 'dist/img/landing-pg/logo-light.png' %}" alt="brand" />
+					</a>
+
+					<div class="collapse navbar-collapse ml-auto" id="navbarCollapseAlt">
+						 <ul class="navbar-nav ml-auto">
+							<li
+								{% if 'about' in request.path %}
+									class="nav-item active"
+								{% else %}
+									class="nav-item"
+								{% endif %}
+							>
+								<a class="nav-link" data-scroll href="{% url 'pages:about' %}">About</a>
+							</li>
+							<li
+								{% if 'blog' in request.path %}
+									class="nav-item active"
+								{% else %}
+									class="nav-item"
+								{% endif %}
+							>
+                            </li>
+						 </ul>
+					</div>
+					<ul class="navbar-nav hk-navbar-content">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary btn-rounded" href="{% url 'locations:index' %}">Sites</a>
+                    </li>
+                </ul>
+				</nav>
+			</div>
+		</div>
+		<!-- Main Content -->
+        <div class="hk-pg-wrapper pt-0">
+			<!-- Row -->
+			<div class="row">
+				<div class="col-xl-12">
+
+					{% block content %} {% endblock %}
+
+				</div>
+			</div>
+			<!-- /Row -->
+
+			<!-- Footer -->
+            <div class="hk-footer-wrap container">
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <p>Will Dodge © 2019</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="d-inline-block">Follow us</p>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /Footer -->
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="{% static 'dist/js/jquery.slimscroll.js' %}"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="{% static 'dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="{% static 'vendors/jquery-toggles/toggles.min.js' %}"></script>
+    <script src="{% static 'dist/js/toggle-data.js' %}"></script
+
+    <!-- Toastr JS -->
+    <script src="{% static 'vendors/jquery-toast-plugin/dist/jquery.toast.min.js' %}"></script>
+
+    <!-- Counter Animation JavaScript -->
+	<script src="{% static 'vendors/waypoints/lib/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'vendors/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{% static 'vendors/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendors/morris.js/morris.min.js' %}"></script>
+
+
+    <!-- EChartJS JavaScript -->
+    <script src="{% static 'vendors/echarts/dist/echarts-en.min.js' %}"></script>
+
+    <!-- Init JavaScript -->
+    <script src="{% static 'dist/js/init.js' %}"></script>
+	<script src="{% static 'dist/js/dashboard2-data.js' %}"></script>
+
+	<!-- Owl JavaScript -->
+    <script src="{% static 'vendors/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+
+	<!-- FeatherIcons JavaScript -->
+    <script src="{% static 'dist/js/feather.min.js' %}"></script>
+
+	<!-- Gallery JavaScript -->
+    <script src="{% static 'vendors/lightgallery/dist/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'dist/js/froogaloop2.min.js' %}"></script>
+
+    <!-- Gmap JavaScript -->
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBazijMOj67rUPPtVybwi2Nbo90tx7vwZs"></script>
+
+	<!-- Init JavaScript -->
+    <script src="{% static 'dist/js/lightgallery-all.js' %}"></script>
+    <script src="{% static 'dist/js/landing-data.js' %}"></script>
+    <script src="{% static 'dist/js/gmap-data.js' %}"></script>
+	</body>
+
+</html>

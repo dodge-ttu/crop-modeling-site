@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ datetimehist|json_script:"datetimehist" }}
+{{ temphist|json_script:"temphist" }}
+{{ windhist|json_script:"windhist" }}
+
+<!-- Main Content -->
+<div class="bg-smoke-light-5 hk-pg-wrapper">
+    <!-- Container -->
+    <div class="container mt-xl-70 mt-sm-30">
+        <!-- Title -->
+        <div class="hk-pg-header">
+            <div>
+                <h2 class="hk-pg-title font-weight-600">{{ loc_description }}</h2>
+            </div>
+        </div>
+        <!-- /Title -->
+
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="hk-row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Wind Speed</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_wind_speed }}<span class="font-sm-16 ml-5">mph<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Temperature</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_temp }}<span class="font-sm-16 ml-5">&#176;F</span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Humidity</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_humidity }}<span class="font-sm-16 ml-5">%<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Pressure</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_pressure }}<span class="font-sm-16 ml-5">in<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-12">
+                        <div class="card card-refresh">
+                            <div class="refresh-container">
+                                <div class="loader-pendulums"></div>
+                            </div>
+                            <div class="card-header card-header-action">
+                                <h6>Temperature - Two Week History</h6>
+                                <div class="d-flex align-items-center card-action-wrap">
+                                    <a href="#" class="inline-block refresh mr-15">
+                                        <i class="ion ion-md-radio-button-off"></i>
+                                    </a>
+                                    <a href="#" class="inline-block full-screen">
+                                        <i class="ion ion-md-expand"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="area_chart" class="echart" style="height: 294px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-12">
+                        <div class="card card-refresh">
+                            <div class="refresh-container">
+                                <div class="loader-pendulums"></div>
+                            </div>
+                            <div class="card-header card-header-action">
+                                <h6>Wind Speed - Two Week History</h6>
+                                <div class="d-flex align-items-center card-action-wrap">
+                                    <a href="#" class="inline-block refresh mr-15">
+                                        <i class="ion ion-md-radio-button-off"></i>
+                                    </a>
+                                    <a href="#" class="inline-block full-screen">
+                                        <i class="ion ion-md-expand"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="area_chart_2" class="echart" style="height: 294px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-12">
+                        <div class="card card-refresh">
+                            <div class="refresh-container">
+                                <div class="loader-pendulums"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</div>
+{% endblock %}

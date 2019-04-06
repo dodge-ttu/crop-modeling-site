@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block branding %}
+
+<h1 id="head">
+    <img src="{% static 'dist/img/landing-pg/logo-light.png' %}" alt="WD" class="brand_img" height="40" width="40">
+    Admin Area
+</h1>
+
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static '/dist/css/will-site-admin.css' %}">
+{% endblock %}
