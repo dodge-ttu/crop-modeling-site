@@ -1,0 +1,251 @@
+Name: Lubbock
+ID: 5525577
+lat: 33.5779
+lon: -101.8552
+
+Name: Lubbock County
+ID: 5525584
+lat: 33.6001
+lon: -101.8338
+
+Name: Liberty
+ID: 5525066
+lat: 33.694
+lon: -101.7672
+
+Name: Wolfforth
+ID: 5534109
+lat: 33.5059
+lon: -102.0091
+
+Name: Reese Center
+ID: 7262207
+lat: 33.6001
+lon: -102.041
+
+Name: Ransom Canyon
+ID: 5528928
+lat: 33.5334
+lon: -101.6797
+
+Name: Shallowater
+ID: 5530549
+lat: 33.689
+lon: -101.9983
+
+Name: Idalou
+ID: 5523659
+lat: 33.6665
+lon: -101.683
+
+Name: Slaton
+ID: 5530825
+lat: 33.4373
+lon: -101.6435
+
+Name: Heckville
+ID: 5522990
+lat: 33.7548
+lon: -101.6652
+
+Name: Abernathy
+ID: 5516008
+lat: 33.8323
+lon: -101.843
+
+Name: Lorenzo
+ID: 5525455
+lat: 33.6706
+lon: -101.5352
+
+Name: Lakeview
+ID: 5524819
+lat: 33.3265
+lon: -102.0505
+
+Name: Anton
+ID: 5550611
+lat: 33.8112
+lon: -102.1638
+
+Name: Petersburg
+ID: 5528302
+lat: 33.8695
+lon: -101.5974
+
+Name: Ralls
+ID: 5550669
+lat: 33.6743
+lon: -101.3877
+
+Name: Lynn County
+ID: 5525637
+lat: 33.1668
+lon: -101.8338
+
+Name: Tahoka
+ID: 5532037
+lat: 33.1668
+lon: -101.7938
+
+Name: Levelland
+ID: 5525042
+lat: 33.5873
+lon: -102.378
+
+Name: Hale Center
+ID: 5522714
+lat: 34.0642
+lon: -101.8438
+
+Name: Hale County
+ID: 5522717
+lat: 34.0667
+lon: -101.8338
+
+Name: Littlefield
+ID: 5525295
+lat: 33.9173
+lon: -102.3249
+
+Name: Crosbyton
+ID: 5519719
+lat: 33.6601
+lon: -101.238
+
+Name: Brownfield
+ID: 5517675
+lat: 33.1812
+lon: -102.2744
+
+Name: Sundown
+ID: 5531919
+lat: 33.4562
+lon: -102.4894
+
+Name: Post
+ID: 5528596
+lat: 33.1909
+lon: -101.3782
+
+Name: Floydada
+ID: 5521646
+lat: 33.9845
+lon: -101.3377
+
+Name: Plainview
+ID: 5528450
+lat: 34.1848
+lon: -101.7069
+
+Name: Olton
+ID: 5527759
+lat: 34.1834
+lon: -102.1347
+
+Name: Lockney
+ID: 5525346
+lat: 34.1245
+lon: -101.4416
+
+Name: Seth Ward
+ID: 5530469
+lat: 34.2117
+lon: -101.6902
+
+Name: Morton
+ID: 5526657
+lat: 33.7251
+lon: -102.7594
+
+Name: Earth, TX
+ID: 5520687
+lat: 34.2331
+lon: -102.4108
+
+Name: Hart
+ID: 5522876
+lat: 34.3851
+lon: -102.1158
+
+Name: Spur
+ID: 5550683
+lat: 33.4765
+lon: -100.8557
+
+Name: Lamesa
+ID: 5524849
+lat: 32.7376
+lon: -101.951
+
+Name: Dawson County
+ID: 5519946
+lat: 32.7334
+lon: -101.9505
+
+Name: Dickens
+ID: 5520196
+lat: 33.6218
+lon: -100.8366
+
+Name: Los Ybanez
+ID: 5525466
+lat: 32.719
+lon: -101.9174
+
+Name: Seagraves
+ID: 5530403
+lat: 32.9443
+lon: -102.565
+
+Name: Gail
+ID: 5521972
+lat: 32.7704
+lon: -101.4455
+
+Name: Plains
+ID: 5528440
+lat: 33.1887
+lon: -102.828
+
+Name: Tulia
+ID: 5532610
+lat: 34.5359
+lon: -101.7586
+
+Name: Matador
+ID: 5525856
+lat: 34.012
+lon: -100.8221
+
+Name: Muleshoe
+ID: 5526805
+lat: 34.2265
+lon: -102.7239
+
+Name: Silverton
+ID: 5530728
+lat: 34.4742
+lon: -101.3047
+
+Name: Denver City
+ID: 5520110
+lat: 32.9646
+lon: -102.8292
+
+Name: Dimmitt
+ID: 5520201
+lat: 34.5509
+lon: -102.3119
+
+Name: Seminole
+ID: 5530452
+lat: 32.719
+lon: -102.645
+
+Name: Jayton
+ID: 5523963
+lat: 33.2482
+lon: -100.5738
+
+[31/Mar/2019 03:10:23] "GET /hoogamcbooga/?bazabazaboopboop=bazabazaboopboop HTTP/1.1" 200 141
