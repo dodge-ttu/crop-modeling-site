@@ -127,11 +127,3 @@ todays_sunset = (origin + timedelta(days=sunset)) - timedelta(hours=5)
 
 print(datetime.strftime(todays_sunrise, "%Y-%m-%d %H:%M:%S"))
 print(datetime.strftime(todays_sunset, "%Y-%m-%d %H:%M:%S"))
-
-
-a = None
-b = "foo"
-
-
-c = "Hello" if a & (b == 'foo') else "bar"
-c = "Hello" if a and (b == 'foo') else "bar"
