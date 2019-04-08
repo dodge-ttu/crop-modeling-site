@@ -5,7 +5,7 @@
       <paths name="crop_mod">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/will/crop_mod_site" local="$PROJECT_DIR$" web="http://162.243.173.184" />
+            <mapping deploy="/home/will/crop_mod_site" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
