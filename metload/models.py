@@ -11,8 +11,13 @@ class Obsset(models.Model):
     site_name = models.CharField(max_length=100, blank=True, null=True)
     latitude = models.DecimalField(max_digits=10, decimal_places=6, blank=True, null=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=6, blank=True, null=True)
+<<<<<<< HEAD
     sunrise = models.IntegerField(blank=True, null=True)
     sunset = models.IntegerField(blank=True, null=True)
+=======
+    sunrise = models.DecimalField(max_digits=20, decimal_places=6, blank=True, null=True)
+    sunset = models.DecimalField(max_digits=20, decimal_places=6, blank=True, null=True)
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
     temperature = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     pressure = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     humidity = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)

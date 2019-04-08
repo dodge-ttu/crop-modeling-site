@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/cropmod_local.iml" filepath="$PROJECT_DIR$/.idea/cropmod_local.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/crop_mod_local.iml" filepath="$PROJECT_DIR$/.idea/crop_mod_local.iml" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
     </modules>
   </component>
 </project>
