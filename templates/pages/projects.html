@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Utilities Sec -->
+<section class="bg-smoke-light-5 hk-landing-sec pb-35">
+    <div class="container">
+        <h2 class="text-center">Smooth<span class="text-primary"> realtime</span> data driven crop models tuned for the High Plains.</h2>
+        <div class="container">
+            <div class="row mt-50">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="{% url 'rainmodels:index' %}">
+                        <div class="card project-cards">
+                            <img class="card-img-top" src="{% static 'dist/img/landing-pg/rain-image-projects-will-site.png' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span class="d-flex align-items-center">
+                                        <span class="font-icons-wrap smoke-dark-5 mr-15"><i class="fa fa-tint"></i></span>
+                                        Rain Models
+                                    </span>
+                                </h5>
+                                <p class="card-text project-card-fixed-height">Consolidated extended rain forecasts and historical trend analysis from local station data.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="{% url 'growthmodels:index' %}">
+                        <div class="card project-cards">
+                            <img class="card-img-top" src="{% static 'dist/img/landing-pg/growth-image-projects-will-site.png' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span class="d-flex align-items-center">
+                                        <span class="font-icons-wrap smoke-dark-5 mr-15"><i class="fa fa-leaf"></i></span>
+                                        Growth Models
+                                    </span>
+                                </h5>
+                                <p class="card-text project-card-fixed-height">A suite of crop growth models garnered from scientific publications but locally focused.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="{% url 'yieldmodels:index' %}">
+                        <div class="card project-cards">
+                            <img class="card-img-top" src="{% static 'dist/img/landing-pg/yield-image-projects-will-site.png' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span class="d-flex align-items-center">
+                                        <span class="font-icons-wrap smoke-dark-5 mr-15"><i class="fa fa-usd"></i></span>
+                                        Yield Models
+                                    </span>
+                                </h5>
+                                <p class="card-text project-card-fixed-height">Area wide yield predictions give historic trends and current weather data from local sites.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="{% url 'qualitymodels:index' %}">
+                        <div class="card project-cards">
+                        <img class="card-img-top" src="{% static 'dist/img/landing-pg/quality-image-projects-will-site.png' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <span class="d-flex align-items-center">
+                                        <span class="font-icons-wrap smoke-dark-5 mr-15"><i class="fa fa-search"></i></span>
+                                        Quality Models
+                                    </span>
+                                </h5>
+                                <p class="card-text project-card-fixed-height">Cotton quality models and predictors.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Utilities Sec -->
+
+{% endblock %}
