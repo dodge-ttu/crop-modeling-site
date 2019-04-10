@@ -1,3 +1,7 @@
+from django.shortcuts import render, get_object_or_404
+from .models import Obsset, Location
+from .owm_get_region import region_info, parse_met_vars
+
 print('square one')
 
 from django.shortcuts import render, get_object_or_404
@@ -28,6 +32,10 @@ def obsload(request):
             'units': 'imperial',
         }
 
+        region_data_and_info, data_request_time = region_info(**params)
+        print('one')
+        cln_obs_data_all_sites = parse_met_vars(region_data_and_info)
+        print(cln_obs_data_all_sites)
         print('one')
         region_data_and_info, data_request_time = region_info(**params)
         print('two')
@@ -53,6 +61,7 @@ def obsload(request):
                     site_name = cln_obs_data['site_name'],
                     latitude = cln_obs_data['lat'],
                     longitude = cln_obs_data['lon'],
+                    sunsrise = cln_obs_data['sunrise'],
                     sunrise = cln_obs_data['sunrise'],
                     sunset = cln_obs_data['sunset'],
                     temperature = cln_obs_data['temp'],

@@ -1,12 +1,15 @@
 # Created by https://www.gitignore.io/api/python,django
 # Edit at https://www.gitignore.io/?templates=python,django
 
+<<<<<<< HEAD
+=======
 ### Keys ###
 django_key.txt
 met_load_key.txt
 
 
 
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
 ### Django ###
 *.log
 *.pot

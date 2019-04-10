@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime as dt
+
 from metload.sunrise_sunset import sun_rise_set
 
 def region_info(lat, lon, city_count, APPID, units):
@@ -56,6 +57,7 @@ def parse_met_vars(owm_data):
         st_main = st['main']
         st_dt = st['dt']
         st_wind = st['wind']
+        st_sys = st['sys'] # OWM internal parameters, but sunrise and sunset is included here
         # st_sys = st['sys'] # OWM internal parameters
         st_rain = st['rain']
         st_snow = st['snow']
@@ -70,6 +72,8 @@ def parse_met_vars(owm_data):
             'site_name': st_name if st_name else 'NaN',
             'lat': st_coords['lat'] if st_coords else 'NaN',
             'lon': st_coords['lon'] if st_coords else 'NaN',
+            'sunrise':st_sys['sunrise'] if ('sunrise' in st_sys) else 'NaN',
+            'sunset':st_sys['sunset'] if ('sunset' in st_sys) else 'Nan',
             'sunrise':tdy_sunrise if tdy_sunrise else 'NaN',
             'sunset':tdy_sunset if tdy_sunset else 'Nan',
             'temp': st_main['temp'] if 'temp' in st_main else 'NaN',
@@ -81,6 +85,8 @@ def parse_met_vars(owm_data):
             'wind_speed': st_wind['speed'] if 'speed' in st_wind else 'NaN',
             'wind_dir': st_wind['deg'] if 'deg' in st_wind else 'NaN',
             'wind_gust': st_wind['gust'] if 'gust' in st_wind else 'NaN',
+            'rain_1h': st_rain['1h'] if st_rain else 0,
+            'rain_3h': st_rain['3h'] if st_rain else 0,
             'rain_1h': st_rain['1h'] if st_rain and ('1h' in st_rain) else 0,
             'rain_3h': st_rain['3h'] if st_rain and ('3h' in st_rain) else 0,
             'snow': st_snow if st_snow else 0,
