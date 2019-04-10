@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="PublishConfigData" autoUpload="Always" serverName="cropmod">
+  <component name="PublishConfigData" serverName="cropmod">
     <serverData>
       <paths name="cropmod">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/will/crop_mod_site" local="$PROJECT_DIR$" web="http://162.243.173.184" />
-=======
-  <component name="PublishConfigData" autoUpload="Always" serverName="crop_mod" deleteMissingItems="true">
-    <serverData>
-      <paths name="crop_mod">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/home/will/crop_mod_site" local="$PROJECT_DIR$" />
->>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
+            <mapping deploy="/home/will/crop_mod_site" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
