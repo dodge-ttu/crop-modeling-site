@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="153b9b10-6e8a-468d-91ff-d0d97d5f7bff" name="Default Changelist" comment="" />
+=======
     <list default="true" id="5bfa3812-b53e-48f4-add5-9d31226cb197" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/metload/sunrise_sunset.py" afterDir="false" />
@@ -13,12 +16,25 @@
       <change beforePath="$PROJECT_DIR$/metload/owm_get_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/metload/owm_get_region.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metload/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/metload/views.py" afterDir="false" />
     </list>
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locations/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+=======
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -40,15 +56,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/templates/locations/location.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="71" column="113" selection-start-line="71" selection-start-column="113" selection-end-line="71" selection-end-column="113" />
+=======
         <entry file="file://$PROJECT_DIR$/metload/sunrise_sunset.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
             </state>
           </provider>
         </entry>
@@ -56,8 +80,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metload/models.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="221">
+              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+=======
             <state relative-caret-position="216">
               <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -65,6 +94,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/metload/calculate_sunrise_sunset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
+=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metload/calculate_sunrise_sunset_walk_through.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,16 +109,26 @@
               <folding>
                 <element signature="e#376#387#0" expanded="true" />
               </folding>
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/metload/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+=======
         <entry file="file://$PROJECT_DIR$/metload/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
               </folding>
             </state>
           </provider>
@@ -91,8 +137,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metload/owm_get_region.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="1139">
+              <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+=======
             <state relative-caret-position="514">
               <caret line="96" selection-start-line="96" selection-end-line="96" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -100,6 +151,40 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/locations/models.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$PROJECT_DIR$/metget/django_key.txt" />
+        <option value="$PROJECT_DIR$/metget/settings.py" />
+        <option value="$PROJECT_DIR$/metload/urls.py" />
+        <option value="$PROJECT_DIR$/metload/met_load_key.txt" />
+        <option value="$PROJECT_DIR$/metload/request_data_load.py" />
+        <option value="$PROJECT_DIR$/templates/pages/index.html" />
+        <option value="$PROJECT_DIR$/templates/pages/about.html" />
+        <option value="$PROJECT_DIR$/static/dist/js/gmap-data.js" />
+        <option value="$PROJECT_DIR$/static/dist/js/dashboard2-data.js" />
+        <option value="$PROJECT_DIR$/templates/locations/index.html" />
+        <option value="$PROJECT_DIR$/locations/views.py" />
+        <option value="$PROJECT_DIR$/templates/locations/location.html" />
+        <option value="$PROJECT_DIR$/metload/models.py" />
+        <option value="$PROJECT_DIR$/metload/views.py" />
+        <option value="$PROJECT_DIR$/metload/owm_get_region.py" />
+        <option value="$PROJECT_DIR$/metload/calculate_sunrise_sunset.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="366" />
+    <option name="y" value="1362" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+=======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/metload/solar_radiation_per_unit_time_walk_through.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,11 +245,56 @@
     <option name="height" value="1062" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+              <item name="locations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+              <item name="metget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+              <item name="metload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cropmod_local" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="locations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="cropmod_local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+=======
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -202,6 +332,7 @@
               <item name="crop_mod_local" type="b2602c69:ProjectViewProjectNode" />
               <item name="crop_mod_local" type="462c0819:PsiDirectoryNode" />
               <item name="metload" type="462c0819:PsiDirectoryNode" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
             </path>
           </expand>
           <select />
@@ -210,6 +341,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+=======
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -218,13 +353,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+<<<<<<< HEAD
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+=======
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,6 +383,19 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="153b9b10-6e8a-468d-91ff-d0d97d5f7bff" name="Default Changelist" comment="" />
+      <created>1554215987059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554215987059</updated>
+      <workItem from="1554215989480" duration="1455000" />
+      <workItem from="1554218328706" duration="8400000" />
+      <workItem from="1554297105497" duration="24145000" />
+      <workItem from="1554387268927" duration="6302000" />
+      <workItem from="1554468789280" duration="14270000" />
+      <workItem from="1554729699650" duration="1329000" />
+=======
       <changelist id="5bfa3812-b53e-48f4-add5-9d31226cb197" name="Default Changelist" comment="" />
       <created>1553914517959</created>
       <option name="number" value="Default" />
@@ -258,10 +411,19 @@
       <workItem from="1554552297287" duration="16000" />
       <workItem from="1554555771146" duration="1359000" />
       <workItem from="1554657092869" duration="12271000" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="55901000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="1105" width="1853" height="1055" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1283896" />
+=======
     <option name="totallyTimeSpent" value="92060000" />
   </component>
   <component name="TodoView">
@@ -277,6 +439,7 @@
     <frame x="67" y="17" width="1117" height="1062" extended-state="4" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22263798" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -285,6 +448,22 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.30786267" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" visible="true" weight="0.2535991" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5002767" side_tool="true" weight="0.34994462" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32890365" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+=======
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292683" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
@@ -325,21 +504,44 @@
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32969216" />
     </layout-to-restore>
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/metget/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+=======
     <entry file="file://$PROJECT_DIR$/../will-site-project/will-site/will_site_main/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="120" column="5" selection-start-line="119" selection-end-line="122" selection-end-column="1" />
           <folding>
             <element signature="e#51#60#0" expanded="true" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metload/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="50" />
+=======
     <entry file="file://$PROJECT_DIR$/metget/metget/settings.py" />
     <entry file="file://$PROJECT_DIR$/../will-site-project/will-site/will_site_main/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -366,12 +568,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/metget/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metload/request_data_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metload/met_load_key.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="51" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metget/django_key.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locations/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+=======
     <entry file="file://$PROJECT_DIR$/static/dist/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -444,10 +686,17 @@
           <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/pages/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="173" selection-start-line="24" selection-start-column="173" selection-end-line="24" selection-end-column="173" />
+=======
     <entry file="file://$PROJECT_DIR$/site_info_list.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -462,11 +711,25 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/locations/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="374">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/dist/js/dashboard2-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+=======
         <state relative-caret-position="126">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
@@ -479,10 +742,17 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/static/dist/js/gmap-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+=======
     <entry file="file://$PROJECT_DIR$/locations/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -504,12 +774,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/locations/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+=======
     <entry file="file://$PROJECT_DIR$/metload/request_data_load.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -521,12 +798,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/templates/locations/location.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="113" selection-start-line="71" selection-start-column="113" selection-end-line="71" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metload/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+=======
     <entry file="file://$PROJECT_DIR$/metload/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -540,12 +831,22 @@
     <entry file="file://$PROJECT_DIR$/metload/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/metload/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/solar_radiation_per_unit_time.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -557,19 +858,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metload/owm_get_region.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1139">
+          <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+=======
         <state relative-caret-position="514">
           <caret line="96" selection-start-line="96" selection-end-line="96" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/metload/calculate_sunrise_sunset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+=======
     <entry file="file://$PROJECT_DIR$/metload/sunrise_sunset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -591,6 +904,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+>>>>>>> e37ae9a73216b904bbc3d6f88d8398f75c672ef5
         </state>
       </provider>
     </entry>
