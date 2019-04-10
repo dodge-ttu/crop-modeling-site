@@ -13,8 +13,6 @@ class Obsset(models.Model):
     longitude = models.DecimalField(max_digits=10, decimal_places=6, blank=True, null=True)
     sunrise = models.IntegerField(blank=True, null=True)
     sunset = models.IntegerField(blank=True, null=True)
-    sunrise = models.DecimalField(max_digits=20, decimal_places=6, blank=True, null=True)
-    sunset = models.DecimalField(max_digits=20, decimal_places=6, blank=True, null=True)
     temperature = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     pressure = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     humidity = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)

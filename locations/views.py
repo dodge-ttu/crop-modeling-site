@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 
 def index(request):
 
+    print('ehehe')
+
     # Get location.
     if 'location' in request.GET:
         location = request.GET['location']
