@@ -135,7 +135,4 @@ def sun_rise_set(latitude=33.576698, longitude=-101.855072, UTC_offset=5):
     todays_sunrise = (origin + timedelta(days=sunrise)) - timedelta(hours=UTC_offset)
     todays_sunset = (origin + timedelta(days=sunset)) - timedelta(hours=UTC_offset)
 
-    print("Sunrise: {0}".format(datetime.strftime(todays_sunrise, "%Y-%m-%d %H:%M:%S")))
-    print("Sunset: {0}".format(datetime.strftime(todays_sunset, "%Y-%m-%d %H:%M:%S")))
-
     return (todays_sunrise, todays_sunset)

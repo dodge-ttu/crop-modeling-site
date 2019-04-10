@@ -68,7 +68,7 @@ def get_midpoint_period(UTC_offset=5):
 
     return clock_at_midpoint
 
-t = get_midpoint_period()
+t = get_midpoint_period(UTC_offset=0)
 
 # Solar time angle at midpoint of period
 L_z = -97.138451
