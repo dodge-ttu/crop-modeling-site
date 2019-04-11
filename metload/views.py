@@ -3,17 +3,11 @@ from metload.models import Obsset
 from locations.models import Location
 from metload.owm_get_region import region_info, parse_met_vars
 
-print('view starting now')
-
 with open('/home/will/crop_mod_site/metload/met_load_key.txt') as f:
     met_key = f.read()
 
-print(met_key)
-
 def obsload(request):
     if met_key in request.GET:
-
-        print('hehe')
 
         APPID = '86b1c9731a07438094b67f087a4e5595'
         latitude = 33.577862
@@ -35,8 +29,6 @@ def obsload(request):
 
             for (k,v) in cln_obs_data.items():
                 print('[INFO] {0}: {1}'.format(k,v))
-
-            print(type(Obsset))
 
             obs = Obsset(
                     location = Location.objects.get(name=cln_obs_data['site_name']),
@@ -68,15 +60,9 @@ def obsload(request):
                     st_clouds = cln_obs_data['st_clouds'],
             )
 
-            print(obs)
-
             obs.save()
 
-            print(cln_obs_data)
-
-        print("four")
-
-        print('Observations for {0} saved'.format(cln_obs_data['site_name']))
+            print('Observations for {0} saved'.format(cln_obs_data['site_name']))
         
         context = {'message':'success'}
 

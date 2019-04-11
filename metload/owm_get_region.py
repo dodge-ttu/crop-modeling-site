@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime as dt
-
 from metload.sunrise_sunset import sun_rise_set
 
 def region_info(lat, lon, city_count, APPID, units):
@@ -48,9 +47,16 @@ def parse_met_vars(owm_data):
     tdy_sunrise = tdy_sunrise.timestamp()
     tdy_sunset = tdy_sunset.timestamp()
 
+    print('sunrise: {0}'.format(tdy_sunrise))
+    print('sunset: {0}'.format(tdy_sunset))
+
     cln_obs = {}
 
     for st in met:
+
+        for (k,v) in st.items():
+            print('{0}: {1}'.format(k,v))
+
         st_id = st['id']
         st_name = st['name']
         st_coords = st['coord']
@@ -58,7 +64,6 @@ def parse_met_vars(owm_data):
         st_dt = st['dt']
         st_wind = st['wind']
         st_sys = st['sys'] # OWM internal parameters, but sunrise and sunset is included here
-        # st_sys = st['sys'] # OWM internal parameters
         st_rain = st['rain']
         st_snow = st['snow']
         st_clouds = st['clouds']
@@ -72,21 +77,17 @@ def parse_met_vars(owm_data):
             'site_name': st_name if st_name else 'NaN',
             'lat': st_coords['lat'] if st_coords else 'NaN',
             'lon': st_coords['lon'] if st_coords else 'NaN',
-            'sunrise':st_sys['sunrise'] if ('sunrise' in st_sys) else 'NaN',
-            'sunset':st_sys['sunset'] if ('sunset' in st_sys) else 'Nan',
-            'sunrise':tdy_sunrise if tdy_sunrise else 'NaN',
-            'sunset':tdy_sunset if tdy_sunset else 'Nan',
+            'sunrise': tdy_sunrise if tdy_sunrise else 'NaN',
+            'sunset': tdy_sunset if tdy_sunset else 'Nan',
             'temp': st_main['temp'] if 'temp' in st_main else 'NaN',
             'pressure': st_main['pressure'] if 'pressure' in st_main else 'NaN',
             'humidity': st_main['humidity'] if 'humidity' in st_main else 'NaN',
             'temp_min': st_main['temp_min'] if 'temp_min' in st_main else 'NaN',
             'temp_max': st_main['temp_max'] if 'temp_max' in st_main else 'NaN',
-            'datetime': st_dt if st_dt else 'NaN', # datetime in unix, UTC
+            'datetime': st_dt if st_dt else 'NaN',  # datetime in unix, UTC
             'wind_speed': st_wind['speed'] if 'speed' in st_wind else 'NaN',
             'wind_dir': st_wind['deg'] if 'deg' in st_wind else 'NaN',
             'wind_gust': st_wind['gust'] if 'gust' in st_wind else 'NaN',
-            'rain_1h': st_rain['1h'] if st_rain else 0,
-            'rain_3h': st_rain['3h'] if st_rain else 0,
             'rain_1h': st_rain['1h'] if st_rain and ('1h' in st_rain) else 0,
             'rain_3h': st_rain['3h'] if st_rain and ('3h' in st_rain) else 0,
             'snow': st_snow if st_snow else 0,
@@ -98,5 +99,7 @@ def parse_met_vars(owm_data):
         }
 
         cln_obs[st_name] = st_dict
+
+        print('[INFO] observation length: {0}'.format(len(st_dict.keys())))
 
     return cln_obs
