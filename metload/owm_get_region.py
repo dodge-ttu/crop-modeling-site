@@ -77,8 +77,8 @@ def parse_met_vars(owm_data):
             'site_name': st_name if st_name else 'NaN',
             'lat': st_coords['lat'] if st_coords else 'NaN',
             'lon': st_coords['lon'] if st_coords else 'NaN',
-            'sunrise': st_sys['sunrise'] if ('sunrise' in st_sys) else 'NaN',
-            'sunset': st_sys['sunset'] if ('sunset' in st_sys) else 'Nan',
+            'sunrise': tdy_sunrise if tdy_sunrise else 'NaN',
+            'sunset': tdy_sunset if tdy_sunset else 'Nan',
             'temp': st_main['temp'] if 'temp' in st_main else 'NaN',
             'pressure': st_main['pressure'] if 'pressure' in st_main else 'NaN',
             'humidity': st_main['humidity'] if 'humidity' in st_main else 'NaN',
@@ -98,10 +98,8 @@ def parse_met_vars(owm_data):
             'st_clouds': st_clouds['all'] if 'all' in st_clouds else 'NaN',
         }
 
-        print(st_dict)
-
         cln_obs[st_name] = st_dict
 
-        print('observation length: {0}'.format(len(cln_obs.keys())))
+        print('[INFO] observation length: {0}'.format(len(st_dict.keys())))
 
     return cln_obs
