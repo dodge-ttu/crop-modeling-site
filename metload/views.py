@@ -28,15 +28,17 @@ def obsload(request):
             'units': 'imperial',
         }
 
+        print('one')
+
         region_data_and_info, data_request_time = region_info(**params)
         cln_obs_data_all_sites = parse_met_vars(region_data_and_info)
+
+        print('two')
 
         for cln_obs_data in cln_obs_data_all_sites.values():
 
             for (k,v) in cln_obs_data.items():
                 print('[INFO] {0}: {1}'.format(k,v))
-
-            print(type(Obsset))
 
             obs = Obsset(
                     location = Location.objects.get(name=cln_obs_data['site_name']),
@@ -68,13 +70,7 @@ def obsload(request):
                     st_clouds = cln_obs_data['st_clouds'],
             )
 
-            print(obs)
-
             obs.save()
-
-            print(cln_obs_data)
-
-        print("four")
 
         print('Observations for {0} saved'.format(cln_obs_data['site_name']))
         
