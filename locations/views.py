@@ -9,23 +9,18 @@ def index(request):
     if 'location' in request.GET:
         location = request.GET['location']
 
-        obsn_set = Obsset.objects.filter(site_name=location)
+        obsn_set = Obsset.objects.filter(site_name=location).reverse()[240:]
 
         temps = [float(ob.temperature) for ob in obsn_set]
-        temps.reverse()
 
         dtme = [datetime.fromtimestamp(ob.datetime) for ob in obsn_set]
         dtme = [datetime.strftime(dt, format='%m-%d %H:%M') for dt in dtme]
-        temps.reverse()
 
         winds = [float(ob.wind_speed) for ob in obsn_set]
-        winds.reverse()
 
         humiditys = [float(ob.humidity) for ob in obsn_set]
-        humiditys.reverse()
 
         pressures = [float(ob.pressure) for ob in obsn_set]
-        pressures.reverse()
 
         current_temp = temps[0]
         current_wind_speed = winds[0]
@@ -37,6 +32,7 @@ def index(request):
         context['datetimehist'] = dtme
         context['temphist'] = temps
         context['windhist'] = winds
+        context['presshist'] = pressures
         context['current_wind_speed'] = current_wind_speed
         context['current_temp'] = current_temp
         context['current_humidity'] = current_humidity
