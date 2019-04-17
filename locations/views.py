@@ -13,19 +13,17 @@ def index(request):
 
         temps = [float(ob.temperature) for ob in obsn_set]
 
-        dtme = [datetime.fromtimestamp(ob.datetime) for ob in obsn_set]
+        dtme = [(datetime.fromtimestamp(ob.datetime) - timedelta(hours=5)) for ob in obsn_set]
         dtme = [datetime.strftime(dt, format='%m-%d %H:%M') for dt in dtme]
 
         winds = [float(ob.wind_speed) for ob in obsn_set]
-
         humiditys = [float(ob.humidity) for ob in obsn_set]
-
         pressures = [float(ob.pressure) for ob in obsn_set]
 
-        current_temp = temps[0]
-        current_wind_speed = winds[0]
-        current_humidity = humiditys[0]
-        current_pressure = pressures[0]
+        current_temp = temps[-1]
+        current_wind_speed = winds[-1]
+        current_humidity = humiditys[-1]
+        current_pressure = pressures[-1]
 
         context = {}
 
