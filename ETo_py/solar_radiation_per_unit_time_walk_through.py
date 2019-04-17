@@ -127,7 +127,7 @@ R_s = (a_s + (b_s*(n/N))) * R_a
 
 # Calculate clear-sky radiation
 z = 976
-R_so = (0.75 * ((2E-5)*z)) * R_a
+R_so = (0.75 + ((2E-5)*z)) * R_a
 
 # Net solar or net shortwave radiation (R_ns) is the net shortwave radiation resulting from the balance between
 # incoming and reflected solar radiation. This is estimated with:
@@ -142,13 +142,63 @@ R_so = (0.75 * ((2E-5)*z)) * R_a
 albedo = 0.23
 R_ns = (1-albedo) * R_s
 
-# Net longwave radiation (R_nl) must be calculated. The rate
+# Net longwave radiation (R_nl) must be calculated. The rate of longwave energy emission is proportional to the
+# absolute temperature of the surface raised to the fourth power. This relation is expressed quantitatively by the
+# Stefan-Boltzman law. The net energy flux leaving the Earth's surface is, however, less than that emitted and given
+# by the Stefan-Boltzman law due to the absorption and downward radiation from the sky. Water vapour, clouds, carbon
+# dioxide and dust are absorbers and emitters of longwave radiation. Their concentrations should be known when
+# assessing the net outgoing flux. As humidity and cloudiness play an important role, the Stefan-Boltzmann law is
+# corrected by these two factors when estimating the net outgoing flux of longwave radiation. It is thereby assumed
+# that the concentrations of the other absorbers are constant:
 #
+# R_nl = sb_const * ((Tmax_K**4 + Tmin_K**4)/2) * (0.34-0.14*(e_a**(1/2))) * (1.35 * (R_s / R_so) - 0.35)
 #
-#
-#
-#
-#
-#
-#
+# R_nl = net outgoing longwave radiaton [MJ m^-2 given_time_period^-1]
+# sb_const: Stefan-Boltzman constant [4.903E-9 MJ K^-4 m^-2 day^-1]
+# Tmax_K**4: maximum absolute temperature during the time period [K]
+# Tmin_K**4: minimum absolute temperature during the time period [K]
+# e_a: actual vapor pressure [kPa]
+# R_s/R_so: relative shortwave radiation (limited to one)
+# R_s: solar radiation [MJ m^-2 given_time_period^-1]
+# R_so: clear-sky radiation [MJ m^-2 given_time_period^-1]
 
+# Given the relative humidity the actual vapor pressure is determined as:
+#
+# e_a = e_deg(T_period) * (RH_period / 100)
+#
+# e_a: average actual vapor pressure for the given time period [kPa]
+# e_deg(T_period): saturation vapor pressure at air temperature T_period [kPa]
+# RH_period: average relative humidity for the period expressed as a float from zero to one
+
+# As saturation vapor pressure is related to air temperature, it can be calculated form the air temperature. This
+# relationship is represented by the following equation:
+#
+# e_deg(T) = 0.6108 e ((17.27 * T) / (T + 237.3))
+#
+# e_deg(T): saturation vapor pressure at the given air temperature T [kPa]
+# T: air temperature [C]
+# e: 2.7183 (base of natural logarithm) raised to the power []
+
+# Calculate saturation vapor pressure
+T = 33 # Dummy celsius value for the calculation
+e_deg_T = 0.6018 * math.exp((17.27 * T) / (T+237.3))
+
+# Calculate actual vapor pressure
+RH_period = .40 # Dummy value for calculation
+e_a = e_deg_T* (RH_period)
+
+# Calculate net longwave radiation
+sb_const = 4.903E-9
+Tmin = 32 # Dummy celsius value for the calculation
+Tmax = 33 # Dummy celsius value for the calculation
+Tmin_K = Tmin + 273.16
+Tmax_K = Tmax + 273.16
+
+# R_nl = sb_const * ((Tmax_K**4 + Tmin_K**4)/2) * (0.34-0.14*(e_a**(1/2))) * (1.35 * (R_s / R_so) - 0.35)
+R_nl = (sb_const/48) * ((Tmin_K**4 + Tmax_K**4)/2) * (0.34 - (0.14 * (math.sqrt(e_a)))) * ((1.35 * (R_s/R_so)) - 0.35)
+
+# Net radiation (R_n) is the difference between the incoming net shortwave radiation (R_ns) and the outgoing net
+# longwave radiation (R_nl) expressed as:
+#
+# R_n = R_ns - R_nl
+R_n = R_ns - R_nl
