@@ -142,7 +142,7 @@ R_so = (0.75 * ((2E-5)*z)) * R_a
 albedo = 0.23
 R_ns = (1-albedo) * R_s
 
-# Net longwave radiation (R_nl) must be calculated.
+# Net longwave radiation (R_nl) must be calculated. The rate
 #
 #
 #
