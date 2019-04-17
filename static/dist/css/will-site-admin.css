@@ -1,0 +1,31 @@
+#header {
+    height: 50px;
+    background: #aebec4;
+    color: #233c46;
+}
+
+#header a:visited {
+    color: #304e5a;
+}
+
+#branding h1 {
+    color: #233c46;
+}
+
+#user-tools a {
+    border-bottom: 1px solid #233c46;
+}
+
+div.breadcrumbs {
+    background: #304e5a;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #304e5a;
+    color: #fff;
+}
