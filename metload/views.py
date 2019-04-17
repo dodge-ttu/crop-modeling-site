@@ -62,7 +62,7 @@ def obsload(request):
 
             obs.save()
 
-        print('Observations for {0} saved'.format(cln_obs_data['site_name']))
+            print('Observations for {0} saved'.format(cln_obs_data['site_name']))
         
         context = {'message':'success'}
 

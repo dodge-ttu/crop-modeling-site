@@ -20,7 +20,7 @@ from datetime import datetime, timedelta
 J_yr_2000 = 2451545.0
 
 origin = datetime.strptime("2000-01-01 12:00:00", '%Y-%m-%d %H:%M:%S')
-time_now = datetime.now()
+time_now = datetime.now() # Server in UTC so subtract 5 hrs for Lubbock TX
 
 # Difference between now and Jan 1, 2000 12:00.
 time_diff = time_now - origin
@@ -47,6 +47,8 @@ J_approx = n - (l_w / 360)
 
 M = (357.5291 + 0.98560028 * J_approx) % 360
 
+M = math.radians(M)
+
 # Calculate the Equation of the center
 #
 # C = 1.9148 sin(M) + 0.0200 sin(2M) + 0.0003 sin(3M)
@@ -54,7 +56,10 @@ M = (357.5291 + 0.98560028 * J_approx) % 360
 # C: the Equation of center value needed to calculate lambda in the next equation.
 # 1.9148: the coefficient of the Equation of the Center for the planet the observer is on (Earth in this case)
 
-C = (1.9148 * math.sin(M) )+ (0.0200 * math.sin(2*M)) + (0.0003 * math.sin(3*M))
+C = (math.radians(1.9148) * math.sin(M) )+ (math.radians(0.0200) * math.sin(2*M)) + (math.radians(0.0003) * math.sin(3*M))
+
+C = math.degrees(C)
+M = math.degrees(M)
 
 # Calculate the ecliptic longitude
 #
@@ -76,7 +81,10 @@ eclipt_long = (M + C + 180 + 102.9372) % 360
 #
 # Link explaining the equation of time concept: https://en.wikipedia.org/wiki/Equation_of_time
 
-J_transit = J_yr_2000 + J_approx + (0.0053 * math.sin(M)) - (0.0069 * math.sin(2 * eclipt_long))
+eclipt_long = math.radians(eclipt_long)
+M = math.radians(M)
+
+J_transit = J_yr_2000 + J_approx + (math.radians(0.0053) * math.sin(M)) - (math.radians(0.0069) * math.sin(2 * eclipt_long))
 
 # Calculate the declination of the sun.
 #
@@ -85,7 +93,7 @@ J_transit = J_yr_2000 + J_approx + (0.0053 * math.sin(M)) - (0.0069 * math.sin(2
 # 𝛿 is the declination of the sun.
 # 23.44° is Earth's maximum axial tilt toward sun
 
-little_delta = math.asin((math.sin(eclipt_long) * math.sin(23.44)))
+little_delta = math.asin((math.sin(eclipt_long) * math.sin(math.radians(23.44))))
 
 # Calculate the hour angle
 #
@@ -96,7 +104,7 @@ little_delta = math.asin((math.sin(eclipt_long) * math.sin(23.44)))
 
 phi = 33.576698
 
-w_naught = math.acos((math.sin(-0.83) - (math.sin(phi) * math.sin(little_delta))) / (math.cos(phi) * math.cos(little_delta)))
+w_naught = math.acos((math.sin(math.radians(-0.83)) - (math.sin(math.radians(phi)) * math.sin(little_delta))) / (math.cos(math.radians(math.radians(phi))) * math.cos(little_delta)))
 
 # Calculate sunrise and sunset
 #
@@ -106,16 +114,16 @@ w_naught = math.acos((math.sin(-0.83) - (math.sin(phi) * math.sin(little_delta))
 # J_rise: the actual Julian date of sunrise
 # J_set: the actual Julian date of sunset
 
+w_naught = math.degrees(w_naught)
+
 J_rise = J_transit - (w_naught / 360)
 J_set = J_transit + (w_naught / 360)
 
 sunrise = J_rise - 2451545.0
 sunset = J_set - 2451545.0
 
-todays_sunrise = (origin + timedelta(days=sunrise)) - timedelta(hours=12)
-todays_sunset = (origin + timedelta(days=sunset)) - timedelta(hours=12)
+todays_sunrise = (origin + timedelta(days=sunrise)) - timedelta(hours=5)
+todays_sunset = (origin + timedelta(days=sunset)) - timedelta(hours=5)
 
 print(datetime.strftime(todays_sunrise, "%Y-%m-%d %H:%M:%S"))
 print(datetime.strftime(todays_sunset, "%Y-%m-%d %H:%M:%S"))
-
-
