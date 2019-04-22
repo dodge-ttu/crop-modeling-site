@@ -85,7 +85,7 @@ G_sc = 0.0820 # MJ * m^-2 * min^-1
 R_a = ((12*(60))/math.pi)*G_sc*d_r*((little_omega_2-little_omega_1)*(math.sin(j)*math.sin(little_delta))+(math.cos(j)*math.cos(little_delta)*(math.sin(little_omega_2)-math.sin(little_omega_1))))
 
 # From the estimation of extraterrestrial solar radiation (R_a) the amount of solar radiation that enters the Earth's
-# atmosphere (Rs) can be calculated with the Angstrom formula which relates solar radiatoin to extraterrestrial
+# atmosphere (R_s) can be calculated with the Angstrom formula which relates solar radiation to extraterrestrial
 # radiation.
 #
 # R_s = (a_s + b_s(n/N)) * R_a
@@ -136,7 +136,7 @@ R_so = (0.75 + ((2E-5)*z)) * R_a
 #
 # R_ns: net solar or shortwave radiation
 # a: albedo or canopy reflection coefficient, which is 0.23 for the hypothetical grass reference crop [dimensionless]
-# R_s: the incoming solar radiation [MJ m^-2 given_time_period^-2]
+# R_s: the incoming solar radiation [MJ m^-2 given_time_period^-1]
 
 # Calculate net solar shortwave radiation
 albedo = 0.23
@@ -185,7 +185,7 @@ e_deg_T = 0.6018 * math.exp((17.27 * T) / (T+237.3))
 
 # Calculate actual vapor pressure
 RH_period = .40 # Dummy value for calculation
-e_a = e_deg_T* (RH_period)
+e_a = e_deg_T * RH_period
 
 # Calculate net longwave radiation
 sb_const = 4.903E-9
@@ -201,4 +201,23 @@ R_nl = (sb_const/48) * ((Tmin_K**4 + Tmax_K**4)/2) * (0.34 - (0.14 * (math.sqrt(
 # longwave radiation (R_nl) expressed as:
 #
 # R_n = R_ns - R_nl
+
+# Calculate net radiation
 R_n = R_ns - R_nl
+
+# Complex models are available to describe soil heat flux. Because soil heat flux is small compared to R_n,
+# particularly when the surface is covered be vegetation and calculation time steps are 24 hours or longer, a simple
+# calculation procedure can be used based on the idea that the soil temperature follows the air temperature. For hourly
+# (or shorter) calculations, G beneath a dense cover of grass (as one would observer in the hypothetical reference
+# crop) does not correlate well with air temperature. Hourly G can be approximated during daylight periods as:
+#
+# Daytime: G_period = 0.1 * R_n
+# Nighttime: G_period = 0.5 * R_n
+
+# Calculate soil heat flux
+G_period_day = 0.1 * R_a
+G_period_night = 0.5 * R_a
+
+# When the soil is warming the value for soil heat flux is positive and should be subtracted from net radaition (R_n)
+# while estimating evapotranspiration.
+
