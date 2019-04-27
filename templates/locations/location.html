@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
 {{ datetimehist|json_script:"datetimehist" }}
+{{ etohist|json_script:"etohist" }}
 {{ temphist|json_script:"temphist" }}
 {{ windhist|json_script:"windhist" }}
 {{ presshist|json_script:"presshist" }}
-
 
 <!-- Main Content -->
 <div class="bg-smoke-light-5 hk-pg-wrapper">
@@ -27,10 +25,10 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card card-sm">
                             <div class="card-body">
-                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Wind Speed</span>
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Temperature</span>
                                 <div class="d-flex align-items-center justify-content-between position-relative">
                                     <div>
-                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_wind_speed }}<span class="font-sm-16 ml-5">mph<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_temp }}<span class="font-sm-16 ml-5">&#176;F</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -39,12 +37,10 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="card card-sm">
                             <div class="card-body">
-                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Temperature</span>
+                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Wind Speed</span>
                                 <div class="d-flex align-items-center justify-content-between position-relative">
                                     <div>
-                                        <span class="d-block">
-                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_temp }}<span class="font-sm-16 ml-5">&#176;F</span></span>
-                                        </span>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_wind_speed }}<span class="font-sm-16 ml-5">mph</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -56,9 +52,7 @@
                                 <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Humidity</span>
                                 <div class="d-flex align-items-end justify-content-between">
                                     <div>
-                                        <span class="d-block">
-                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_humidity }}<span class="font-sm-16 ml-5">%<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
-                                        </span>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_humidity }}<span class="font-sm-16 ml-5">%<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
                                     </div>
                                 </div>
                             </div>
@@ -70,11 +64,192 @@
                                 <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Pressure</span>
                                 <div class="d-flex align-items-end justify-content-between">
                                     <div>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_wind_speed }}<span class="font-sm-16 ml-5">mph<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">ETo</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_eto }}<span class="font-sm-16 ml-5">mm<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Extraterrestrial Radiation</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
                                         <span class="d-block">
-                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_pressure }}<span class="font-sm-16 ml-5">in<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_et_solar_rad }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
                                         </span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Incoming Solar Radiation</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_solar_rad }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Clear Sky Radiation</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_clear_sky_rad }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Short Wave Radiation</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ current_shortwave_rad }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Saturation Vapor Pressure</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_sat_vap_pressure }}<span class="font-sm-16 ml-5">kPa</span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Slope of SVP Curve</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_slope_sat_vap_pressure }}<span class="font-sm-16 ml-5">kPa &#8226; &#176;C<sup>-1</sup></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Actual Vapor Pressure</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_actual_vapor_pressure }}<span class="font-sm-16 ml-5">kPa<span class="text-success font-12 font-weight-600 ml-5">+5%</span></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Psychrometric Constant</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block display-5 font-weight-400 text-dark">{{ psychrometric_constant }}<span class="font-sm-16 ml-5">kPa &#8226; &#176;C<sup>-1</sup></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                               <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Net Long Wave Radiation</span>
+                                <div class="d-flex align-items-center justify-content-between position-relative">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ net_longwave_radiation }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Soil Heat Flux</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ soil_heat_flux }}<span class="font-sm-16 ml-5">MJ &#8226; m<sup>-2</sup></span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Current Period</span>
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div>
+                                        <span class="d-block">
+                                            <span class="d-block display-5 font-weight-400 text-dark">{{ current_period_begin }} - {{ current_period_end }}<span class="font-sm-16 ml-5">  hrs</span></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hk-row">
+                    <div class="col-lg-12">
+                        <div class="card card-refresh">
+                            <div class="refresh-container">
+                                <div class="loader-pendulums"></div>
+                            </div>
+                            <div class="card-header card-header-action">
+                                <h6>ETo - 5 Day History</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="area_chart_eto" class="echart" style="height: 294px;"></div>
                             </div>
                         </div>
                     </div>

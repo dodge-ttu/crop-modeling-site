@@ -26,7 +26,7 @@ def get_midpoint_period(period_length=30, utc_offset=5):
     return clock_at_midpoint
 
 
-def et_solar_rad(latitude=33.576698):
+def et_solar_rad(latitude=33.576698, day_of_year=None):
     """
     Estimate extraterrestrial solar radiation. Extraterrestrial radiation is the radiation that strikes a plane
     perpendicular to the Sun's rays at the top of the Earth's atmosphere. This is the major energy source driving
@@ -44,7 +44,9 @@ def et_solar_rad(latitude=33.576698):
     little_delta = 0.409 * math.sin((((2*math.pi)/365)*j)-1.39)
 
     # Seasonal correction for solar time
-    day_of_year = datetime.now().timetuple().tm_yday
+    if not day_of_year:
+        day_of_year = datetime.now().timetuple().tm_yday
+
     b = ((2*math.pi)*(day_of_year-81)) / 364
     S_c = 0.1645 * math.sin(2*b) - 0.1255 * math.cos(b) - 0.025 * math.sin(b)
 
@@ -323,7 +325,6 @@ def soil_heat_flux(R_n, sunrise, sunset):
         G = 0.5 * R_n
 
     return  G
-
 
 
 if __name__=="__main__":

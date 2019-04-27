@@ -35,7 +35,7 @@ if __name__=="__main__":
     eto_values = []
     temp_values = list(range(100))
     for temp in temp_values:
-        extraterrestrial_rad = sol_rad.et_solar_rad()
+        extraterrestrial_rad = sol_rad.et_solar_rad(latitude=33.576698, day_of_year=1)
         solar_rad = sol_rad.solar_radiation(R_a=extraterrestrial_rad)
         clear_sky_rad = sol_rad.clear_sky_radiation(R_a=extraterrestrial_rad)
         net_shortwave_rad = sol_rad.net_shortwave_radiation(R_s=solar_rad)
