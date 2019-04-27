@@ -11,7 +11,7 @@ def index(request):
     if 'location' in request.GET:
 
         location = request.GET['location']
-        obsn_set = Obsset.objects.filter(site_name=location).reverse()[240:]
+        obsn_set = list(Obsset.objects.filter(site_name=location).reverse())
         timestamps = [ob.datetime for ob in obsn_set]
         dtme = [(datetime.fromtimestamp(ob.datetime) - timedelta(hours=5)) for ob in obsn_set]
         dtme = [datetime.strftime(dt, '%m-%d %H:%M') for dt in dtme]
@@ -41,7 +41,7 @@ def index(request):
                 'relative_humidity': rh / 100,  # convert to a percentage
                 'pressure': press * .1,  # convert millibars to kPa
                 'period_length': 30,
-                'utc_offset': 0,
+                'utc_offset': 5,
             }
 
             hist_eto_estimate = EToEstimator(**current_obs)
