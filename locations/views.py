@@ -1,3 +1,5 @@
+import time
+
 from django.shortcuts import render
 from locations.models import Location
 from metload.models import Obsset
@@ -11,7 +13,11 @@ def index(request):
     if 'location' in request.GET:
 
         location = request.GET['location']
-        obsn_set = list(Obsset.objects.filter(site_name=location).reverse())
+
+        ten_days_ago = time.time() - (10 * 24 * 60 * 60)
+
+        obsn_set = Obsset.objects.filter(site_name=location).filter(datetime__gte=ten_days_ago)
+
         timestamps = [ob.datetime for ob in obsn_set]
         dtme = [(datetime.fromtimestamp(ob.datetime) - timedelta(hours=5)) for ob in obsn_set]
         dtme = [datetime.strftime(dt, '%m-%d %H:%M') for dt in dtme]
