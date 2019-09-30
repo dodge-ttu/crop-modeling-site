@@ -1,19 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<!--
-Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
-Author: Hencework
-Contact: https://hencework.ticksy.com/
-License: You must have a valid license purchased only from themeforest to legally use the template for your project.
--->
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>W.Dodge</title>
-    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -21,9 +15,6 @@ License: You must have a valid license purchased only from themeforest to legall
 
 	<!-- Lightgallery CSS -->
     <link href="{% static 'dist/css/lightgallery.css' %}"  rel="stylesheet" type="text/css">
-
-    <!-- Morris Charts CSS -->
-    <link href="{% static 'vendors/morris.js/morris.css' %}" rel="stylesheet" type="text/css" />
 
     <!-- Toggles CSS -->
     <link href="{% static 'vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
@@ -34,6 +25,12 @@ License: You must have a valid license purchased only from themeforest to legall
 
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- Pickr CSS -->
+    <link href="{% static 'vendors/pickr-widget/dist/pickr.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Daterangepicker CSS -->
+    <link href="{% static 'vendors/daterangepicker/daterangepicker.css' %}" rel="stylesheet" type="text/css" />
 
     <!-- Custom CSS -->
     <link href="{% static 'dist/css/style.css' %}"  rel="stylesheet" type="text/css">
@@ -139,16 +136,19 @@ License: You must have a valid license purchased only from themeforest to legall
 	<script src="{% static 'vendors/waypoints/lib/jquery.waypoints.min.js' %}"></script>
 	<script src="{% static 'vendors/jquery.counterup/jquery.counterup.min.js' %}"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="{% static 'vendors/raphael/raphael.min.js' %}"></script>
-    <script src="{% static 'vendors/morris.js/morris.min.js' %}"></script>
+    <!-- Bootstrap Input spinner JavaScript -->
+    <script src="{% static 'vendors/bootstrap-input-spinner/src/bootstrap-input-spinner.js' %}"></script>
+    <script src="{% static 'dist/js/inputspinner-data.js' %}"></script>
 
+    <!-- Daterangepicker JavaScript -->
+    <script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'vendors/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'dist/js/daterangepicker-data.js' %}"></script>
 
     <!-- EChartJS JavaScript -->
     <script src="{% static 'vendors/echarts/dist/echarts-en.min.js' %}"></script>
 
     <!-- Init JavaScript -->
-    <script src="{% static 'dist/js/init.js' %}"></script>
 	<script src="{% static 'dist/js/dashboard2-data.js' %}"></script>
 
 	<!-- Owl JavaScript -->
@@ -168,6 +168,9 @@ License: You must have a valid license purchased only from themeforest to legall
     <script src="{% static 'dist/js/lightgallery-all.js' %}"></script>
     <script src="{% static 'dist/js/landing-data.js' %}"></script>
     <script src="{% static 'dist/js/gmap-data.js' %}"></script>
+
+    <script src="{% static 'dist/js/init.js' %}"></script>
+
 	</body>
 
 </html>

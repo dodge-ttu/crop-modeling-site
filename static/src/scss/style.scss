@@ -1842,7 +1842,7 @@ $num: 0;
 }
 
 .text-primary,
-.text-smoke, {
+.text-smoke {
 	color: $smoke !important;
 }
 
@@ -3588,7 +3588,7 @@ ul.list-icon {
 		border-color: $pumpkin_light_3;
 	}
 }
-.btn-primary,
+
 .btn-brown {
 	color:$white;
 	background-color: $brown;
@@ -3631,6 +3631,7 @@ ul.list-icon {
 		border-color: $gold_light_3;
 	}
 }
+.btn-primary,
 .btn-smoke {
 	color:$white;
 	background-color: $smoke;
@@ -4518,7 +4519,7 @@ ul.list-icon {
 .btn-outline-primary,
 .btn-outline-smoke {
 	color:$smoke;
-	background-color: transparent;
+	background-color: #fff;
     background-image: none;
 	border-color: $smoke;
 	&:hover,&:focus {
@@ -4912,10 +4913,12 @@ button.close {
 		padding-right: 1rem;
 	} 
 }	
+
 /*Card*/
 .card {
 	border-color:$smoke-dark-3;
-	margin-bottom:14px;
+	margin-bottom:4px;
+    margin-top:4px;
 	box-shadow: 0 0px 18px rgba(0, 0, 0, 0.1);
 	.card-header {
 		background:transparent;
@@ -4971,7 +4974,7 @@ button.close {
 		}
 	}
 	.card-text {
-		margin-bottom:15px;
+		margin-bottom:8px;
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -5061,16 +5064,22 @@ button.close {
 	&.card-sm {
 		.card-header,
 		.card-footer {
-			padding:.75rem 1rem;
+			padding: .75rem 1rem;
 		}
+
 		.card-body {
-			padding:1rem;
+			padding: 1.5rem;
 		}
 	}
 	&.card-flush {
 		border:0!important;
 		box-shadow:none!important;
 	}
+}
+.data-card {
+	padding-left: .45rem;
+	padding-top: .15rem;
+	padding-bottom: .15rem;
 }
 .card-column-1 {
     -webkit-column-count: 1;
@@ -5082,12 +5091,16 @@ button.close {
 }
 .card-group {
 	box-shadow:0 0px 18px rgba(0, 0, 0, 0.1);
-	margin-bottom:14px;
+	margin-bottom:0;
 	> .card {
 		margin-bottom:0;
 		box-shadow:none;
 	}
 }
+.plot-card {
+	padding: .30rem;
+}
+
 @media (max-width: 576px) { 
 	.card.card-lg {
 		.card-header,
@@ -9247,16 +9260,16 @@ table.dataTable {
 	}
 	td {
 		&.active,&.active:hover {
-			background-color: $brown;
+			background-color: $smoke_dark_3!important;
 			&.available:hover {
-				background-color: $brown;
+				background-color: $smoke_dark_3!important;
 			}
 		}
 		&.in-range {
-			background-color: $brown_light_5;
+			background-color: $smoke_dark_3;
 			color:$dark;
 			&.active,&.active:hover {
-				background-color: $brown;
+				background-color: $smoke_dark_1;
 			}
 		}
 		&.available:hover {
@@ -9340,7 +9353,7 @@ table.dataTable {
 			background-color: $light;
 		}
 		&.active {
-			background-color:$brown;
+			background-color:$smoke;
 		}
 	}
 	&.show-ranges .drp-calendar.left {
@@ -10893,8 +10906,15 @@ table.dataTable {
 }
 /*Google Map*/
 .gmap {
-	height: calc(100vh - 103px);
+	height: 30em !important;
 }
+
+#map_canvas {
+	border: 10px solid;
+	border-radius: 10px;
+	border-color: $smoke;
+}
+
 .infowindow-wrap {
 	.infowindow-header {
 		color: $dark;
@@ -12958,7 +12978,7 @@ table.dataTable {
 @media (max-width: 1199px) {
 	.hk-landing {
 		.container.px-0 {
-			max-width:100%;
+			max-width: 100%;
 		}
-	}	
-}	
+	}
+}

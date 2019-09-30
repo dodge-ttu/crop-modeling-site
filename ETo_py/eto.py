@@ -37,6 +37,7 @@ class EToEstimator:
         self.r_n = None
         self.g = None
         self.eto = None
+        self.print_switch = False
 
     def get_midpoint_period(self):
         """
@@ -69,9 +70,10 @@ class EToEstimator:
         self.clock_at_beginning = clock_at_beginning
         self.clock_at_end = clock_at_end
 
-        print('[INFO] Period beginning: {0}'.format(self.clock_at_beginning))
-        print('[INFO] Period midpoint: {0}'.format(self.clock_at_midpoint))
-        print('[INFO] Period end: {0}'.format(self.clock_at_end))
+        if self.print_switch:
+            print('[INFO] Period beginning: {0}'.format(self.clock_at_beginning))
+            print('[INFO] Period midpoint: {0}'.format(self.clock_at_midpoint))
+            print('[INFO] Period end: {0}'.format(self.clock_at_end))
 
     def sun_rise_set(self):
         """ This is a function that will calculate sunrise and sunset from a given latitude and current time. The method
@@ -145,8 +147,9 @@ class EToEstimator:
         self.todays_sunrise = todays_sunrise
         self.todays_sunset = todays_sunset
 
-        print('[INFO] Today\'s Sunrise: {0}'.format(self.todays_sunrise))
-        print('[INFO] Today\'s Sunset: {0}'.format(self.todays_sunset))
+        if self.print_switch:
+            print('[INFO] Today\'s Sunrise: {0}'.format(self.todays_sunrise))
+            print('[INFO] Today\'s Sunset: {0}'.format(self.todays_sunset))
 
     def et_solar_rad(self, latitude=33.576698, day_of_year=None):
         """
@@ -193,7 +196,8 @@ class EToEstimator:
 
         self.r_a = r_a
 
-        print('[INFO] Period extraterrestrial radiation: {0}'.format(self.r_a))
+        if self.print_switch:
+            print('[INFO] Period extraterrestrial radiation: {0}'.format(self.r_a))
 
     def solar_radiation(self, n=1, max_n=1, a_s=0.25, b_s=0.5):
         """
@@ -216,7 +220,8 @@ class EToEstimator:
 
         self.r_s = r_s
 
-        print('[INFO] Period incoming solar radiation: {0}'.format(self.r_s))
+        if self.print_switch:
+            print('[INFO] Period incoming solar radiation: {0}'.format(self.r_s))
 
     def clear_sky_radiation(self, a_s=0.75, b_s=2E-5, z=976):
         """
@@ -235,7 +240,8 @@ class EToEstimator:
 
         self.r_so = r_so
 
-        print('[INFO] Period clear-sky radiation: {0}'.format(self.r_so))
+        if self.print_switch:
+            print('[INFO] Period clear-sky radiation: {0}'.format(self.r_so))
 
     def net_shortwave_radiation(self, albedo=0.23):
         """
@@ -250,7 +256,8 @@ class EToEstimator:
 
         self.r_ns = r_ns
 
-        print('[INFO] Period net shortwave radiation: {0}'.format(self.r_ns))
+        if self.print_switch:
+            print('[INFO] Period net shortwave radiation: {0}'.format(self.r_ns))
 
     def saturated_vap_pressure(self):
         """
@@ -264,7 +271,8 @@ class EToEstimator:
 
         self.e_deg_t = e_deg_t
 
-        print('[INFO] Period saturated vapor pressure: {0}'.format(self.e_deg_t))
+        if self.print_switch:
+            print('[INFO] Period saturated vapor pressure: {0}'.format(self.e_deg_t))
 
     def slope_sat_vap_pressure(self):
         """
@@ -278,7 +286,8 @@ class EToEstimator:
 
         self.d = d
 
-        print('[INFO] Period slope for saturated vapor pressure: {0}'.format(self.d))
+        if self.print_switch:
+            print('[INFO] Period slope for saturated vapor pressure: {0}'.format(self.d))
 
     def actual_vap_pressure(self):
         """
@@ -291,7 +300,8 @@ class EToEstimator:
 
         self.e_a = e_a
 
-        print('[INFO] Period actual vapor pressure: {0}'.format(self.e_a))
+        if self.print_switch:
+            print('[INFO] Period actual vapor pressure: {0}'.format(self.e_a))
 
     def psychrometric_constant(self, c_p=1.1013E-3, latent_heat=2.45, e_ratio=0.622):
         """
@@ -311,7 +321,8 @@ class EToEstimator:
 
         self.y = y
 
-        print('[INFO] Psychrometric constant at current temperature: {0}'.format(self.y))
+        if self.print_switch:
+            print('[INFO] Psychrometric constant at current temperature: {0}'.format(self.y))
 
     def net_longwave_radiation(self):
         """
@@ -340,7 +351,8 @@ class EToEstimator:
 
         self.r_n = r_n
 
-        print('[INFO] Period net longwave radiation: {0}'.format(self.r_n))
+        if self.print_switch:
+            print('[INFO] Period net longwave radiation: {0}'.format(self.r_n))
 
     def soil_heat_flux(self):
         """
@@ -366,7 +378,8 @@ class EToEstimator:
 
         self.g = g
 
-        print('[INFO] Period soil heat flux: {0}'.format(self.g))
+        if self.print_switch:
+            print('[INFO] Period soil heat flux: {0}'.format(self.g))
 
     def estimate_eto(self):
         """
@@ -402,7 +415,8 @@ class EToEstimator:
 
         self.eto = eto
 
-        print('[INFO] Estimated ETo: {0}'.format(self.eto))
+        if self.print_switch:
+            print('[INFO] Estimated ETo: {0}'.format(self.eto))
 
 
 if __name__ == "__main__":
@@ -418,6 +432,7 @@ if __name__ == "__main__":
         'period_length': 30,
         'pressure': 101.6,
         'utc_offset': 5,
+        'print_switch': True,
     }
 
     eto_estimate = EToEstimator(**current_obs)

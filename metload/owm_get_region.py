@@ -22,7 +22,6 @@ def region_info(lat, lon, city_count, APPID, units):
     }
 
     request_time = dt.now()
-    print('[INFO] Data requested on: {}'.format(request_time))
 
     data = requests.get('https://api.openweathermap.org/data/2.5/find', params=payload)
     data = data.json()
@@ -47,15 +46,9 @@ def parse_met_vars(owm_data):
     tdy_sunrise = tdy_sunrise.timestamp()
     tdy_sunset = tdy_sunset.timestamp()
 
-    print('sunrise: {0}'.format(tdy_sunrise))
-    print('sunset: {0}'.format(tdy_sunset))
-
     cln_obs = {}
 
     for st in met:
-
-        for (k,v) in st.items():
-            print('{0}: {1}'.format(k,v))
 
         st_id = st['id']
         st_name = st['name']
@@ -99,7 +92,5 @@ def parse_met_vars(owm_data):
         }
 
         cln_obs[st_name] = st_dict
-
-        print('[INFO] observation length: {0}'.format(len(st_dict.keys())))
 
     return cln_obs

@@ -3,6 +3,7 @@ from metload.models import Obsset
 from locations.models import Location
 from metload.owm_get_region import region_info, parse_met_vars
 
+
 with open('/home/will/crop_mod_site/metload/met_load_key.txt') as f:
     met_key = f.read()
 
@@ -27,9 +28,6 @@ def obsload(request):
         cln_obs_data_all_sites = parse_met_vars(region_data_and_info)
 
         for cln_obs_data in cln_obs_data_all_sites.values():
-
-            for (k, v) in cln_obs_data.items():
-                print('[INFO] {0}: {1}'.format(k, v))
 
             obs = Obsset(
                     location=Location.objects.get(name=cln_obs_data['site_name']),
@@ -63,8 +61,6 @@ def obsload(request):
 
             obs.save()
 
-            print('Observations for {0} saved'.format(cln_obs_data['site_name']))
-        
         context = {'message': 'success'}
 
         return render(request, 'metload/index.html', context)

@@ -7,10 +7,13 @@ if( $('#map_canvas').length > 0 ){
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
 
-    // Django template tag creates the json allsites object
+    // Django template tag creates the json objects
     var sitesinfo = JSON.parse(document.getElementById('locations_ls').textContent);
+    var sitesdata = JSON.parse(document.getElementById('observation_set').textContent);
 
     console.log(sitesinfo);
+    console.log(sitesdata.length);
+    console.log('here');
 
     var locations = [];
 
@@ -35,7 +38,7 @@ if( $('#map_canvas').length > 0 ){
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
-            zoom: 9,
+            zoom: 8,
 
             // The latitude and longitude to center the map (always required)
             center: new google.maps.LatLng(33.600079, -101.833778), // Lubbock, TX
@@ -93,7 +96,7 @@ if( $('#map_canvas').length > 0 ){
         // Let's also add a marker while we're at it
         for (var i = 0; i < locations.length; i++) {
 
-	    console.log("Will was here")
+	    console.log(sitesdata[i], locations[i]);
 
 	    if (locations[i].service_provider == 'NWS') {
 	    var icon_url = '/static/dist/img/landing-pg/Map-Marker-Marker-Outside-Chartreuse-icon.png';
@@ -101,12 +104,30 @@ if( $('#map_canvas').length > 0 ){
 	      var icon_url = '/static/dist/img/landing-pg/Map-Marker-Marker-Outside-Azure-icon.png';
             }
 
+            // var label_text = sitesdata[i]["temp"];
+	        // var label_text = label_text.toString();
+
+	        var image = {
+                url: icon_url,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i].lat, locations[i].lon),
                 map: map,
                 title: locations[i].name,
-                icon: icon_url,
+                icon: image,
                 url: 'https://aerial-analytics.us/locations/?location='+locations[i].name,
+                // Place data on makers like current temp
+                // label: {
+                //     text: label_text,
+                //     color: 'black',
+                //     fontSize: "24px",
+                //     fontWeight: "bold",
+                // },
             });
 
             google.maps.event.addListener(marker, 'click', (function(marker, i) {

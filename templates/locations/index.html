@@ -3,6 +3,7 @@
 {% block content %}
 
 {{ locs_ls|json_script:"locations_ls" }}
+{{ obs_set|json_script:"observation_set" }}
 
 <!-- Preloader -->
 <div class="preloader-it">
@@ -14,38 +15,34 @@
 <div class="row">
     <div class="col-xl-12">
         <section id="preview_sec" class="bg-smoke-light-5 hk-landing-sec">
-            <div class="container position-relative pt-50">
-                <div class="text-center mb-60">
-                    <h1 class="font-48">Locations Index</h1>
-                    <h4 class="mt-15 mb-15">Select a location to view realtime crop data parameters and modeled growth estimates.</h4>
+            <div class="container">
+                <div class="text-center mb-5 mt-10">
+                <!-- <h1 class="font-48">Locations Index</h1> -->
+                <h4 class="mt-15">Select a location to view crop data and modeled growth.</h4>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div id="map_canvas" class="gmap col-lg-10"></div>
+                        <div class="col-lg-1"></div>
+                    </div>
                 </div>
                 <form action="{% url 'locations:index' %}">
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8 center">
-                            <form>
-                                <select class="form-control custom-select form-control custom-select-lg mt-15" name="location">
-                                    <option selected>Lubbock</option>
-                                    {% for d in locs_ls %}
-                                        <option value="{{ d.name }}">{{ d.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </form>
+                            <select class="form-control custom-select form-control custom-select-lg mt-15" name="location">
+                                <option selected>Select a city</option>
+                                {% for d in locs_ls %}
+                                <option value="{{ d.name }}">{{ d.name }}</option>
+                                {% endfor %}
+                            </select>
                             <input class="btn btn-outline-primary btn-rounded btn-block mt-20" type="submit">
                         </div>
                         <div class="col-md-2"></div>
                     </div>
                 </form>
-                <!-- Container -->
-                <div class="mt-100 text-blue">
-                    <div class="container-fluid">
-                        <div class="col-lg-12 pa-0">
-                                <div id="map_canvas" class="gmap"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           </div>
         </section>
         <!-- /Preview Sec -->
     </div>
