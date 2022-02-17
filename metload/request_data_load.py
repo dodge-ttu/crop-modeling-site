@@ -2,14 +2,15 @@
 
 import requests
 
-with open('/home/will/crop_mod_site/metload/met_load_key.txt') as f:
+with open('/home/will/crop-modeling-site/metload/met_load_key.txt') as f:
         met_key = f.read()
 
-print('good choice')
+print(f'[INFO] {met_key}')
 
 payload = {
-        met_key:met_key,
+        'met_key':met_key,
         }
 
-requests.get('https://aerial-analytics.us/metload/1295849198091283497812893972193748912379', params=payload)
+r = requests.get('http://143.198.148.168:8000/metload/1295849198091283497812893972193748912379', params=payload)
+print(r.text)
 

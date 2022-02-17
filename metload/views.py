@@ -1,17 +1,23 @@
+import logging
 from django.shortcuts import render
 from metload.models import Obsset
 from locations.models import Location
 from metload.owm_get_region import region_info, parse_met_vars
-
+logger = logging.getLogger(__name__)
+print(__name__)
 
 with open('/home/will/crop-modeling-site/metload/met_load_key.txt') as f:
-    met_key = f.read()
+    MET_KEY = f.read().splitlines()[0] # strip newlines
+
+with open('/home/will/crop-modeling-site/metload/owm_api_key.txt') as f:
+    API_KEY = f.read().splitlines()[0] # strip newlines
 
 
-def obsload(request):
+def obsload(request, api_key=API_KEY, met_key=MET_KEY):
     if met_key in request.GET:
+        print('[INFO] Getting met data from OWM')
 
-        appid = '86b1c9731a07438094b67f087a4e5595'
+        appid = api_key
         latitude = 33.577862
         longitude = -101.855171
         count = 50
@@ -25,6 +31,16 @@ def obsload(request):
         }
 
         region_data_and_info, data_request_time = region_info(**params)
+        message = region_data_and_info['message']
+        cod = region_data_and_info['cod']
+        count = region_data_and_info['count']
+        my_list = region_data_and_info['list']
+        logger.warning(f'[INFO] Message:{message}')
+        print(f'[INFO] Response code:{cod}')
+        print(f'[INFO] Response count:{count}')
+        for l in my_list:
+            print(f"[INFO] ID: {l['id']}  Lat:{l['coord']['lat']:.4f}  Lon:{l['coord']['lon']:.4f}  Name: {l['name']}")
+
         cln_obs_data_all_sites = parse_met_vars(region_data_and_info)
 
         for cln_obs_data in cln_obs_data_all_sites.values():
@@ -70,3 +86,13 @@ def obsload(request):
         context = {'message': 'denied'}
 
         return render(request, 'metload/index.html', context)
+
+if __name__ == '__main__':
+
+    with open('/home/will/crop-modeling-site/metload/met_load_key.txt') as f:
+        MET_KEY = f.read().splitlines()[0] # strip newlines
+
+    with open('/home/will/crop-modeling-site/metload/owm_api_key.txt') as f:
+        API_KEY = f.read().splitlines()[0] # strip newlines
+
+    obsload(request, api_key=API_KEY, met_key=MET_KEY)

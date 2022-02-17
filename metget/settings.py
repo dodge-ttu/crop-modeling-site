@@ -1,6 +1,22 @@
 import os
 import sys
 
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,6 +37,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['143.198.148.168']
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Application definition
 
@@ -72,11 +89,12 @@ WSGI_APPLICATION = 'metget.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'csdb',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cslab',
         'USER': 'postgres',
-        'PASSWORD': DB_KEY,
+        'PASSWORD': 'QQ12fghbX',
         'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -104,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -117,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'crop-modeling-site/static/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/static')
+    os.path.join(BASE_DIR, 'static/')
 ]
