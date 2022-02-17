@@ -4,7 +4,7 @@ from locations.models import Location
 from metload.owm_get_region import region_info, parse_met_vars
 
 
-with open('/home/will/crop_mod_site/metload/met_load_key.txt') as f:
+with open('/home/will/crop-modeling-site/metload/met_load_key.txt') as f:
     met_key = f.read()
 
 

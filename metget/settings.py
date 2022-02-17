@@ -10,13 +10,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
-with open('/home/will/crop_mod_site/metget/django_key.txt') as f:
+with open('/home/will/crop-modeling-site/metget/django_key.txt') as f:
     SECRET_KEY = f.read()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+with open('/home/will/crop-modeling-site/metget/db_key.txt') as f:
+    DB_KEY = f.read()
 
-ALLOWED_HOSTS = ['162.243.173.184', 'aerial-analytics.us']
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True 
+
+ALLOWED_HOSTS = ['143.198.148.168']
 
 
 # Application definition
@@ -70,9 +73,9 @@ WSGI_APPLICATION = 'metget.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cropmoddb',
+        'NAME': 'csdb',
         'USER': 'postgres',
-        'PASSWORD': 'QQ12fghbX',
+        'PASSWORD': DB_KEY,
         'HOST': 'localhost',
     }
 }
@@ -114,7 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'crop-modeling-site/static/')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'will-site/static')
+    os.path.join(BASE_DIR, '/static')
 ]
