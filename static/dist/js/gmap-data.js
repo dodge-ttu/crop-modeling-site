@@ -120,7 +120,8 @@ if( $('#map_canvas').length > 0 ){
                 map: map,
                 title: locations[i].name,
                 icon: image,
-                url: 'https://aerial-analytics.us/locations/?location='+locations[i].name,
+                // url: 'http://143.198.148.168:8000/locations/?location='+locations[i].name,
+                url: '/locations/?location='+locations[i].name,
                 // Place data on makers like current temp
                 // label: {
                 //     text: label_text,

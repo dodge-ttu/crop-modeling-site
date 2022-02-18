@@ -3,7 +3,8 @@ from .models import Obsset
 
 
 class ObssetAdmin(admin.ModelAdmin):
-    list_display = ('site_name',)
+    list_display = ('site_name', 'datetime', 'temperature')
+    list_filter = ('site_name',)
 
 
 # class LocationAdmin(admin.ModelAdmin):

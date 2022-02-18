@@ -12,10 +12,16 @@ LOGGING = {
     },
     'root': {
         'handlers': ['console'],
-        'level': 'WARNING',
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
     },
 }
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,9 +39,13 @@ with open('/home/will/crop-modeling-site/metget/db_key.txt') as f:
     DB_KEY = f.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = True
 
-ALLOWED_HOSTS = ['143.198.148.168']
+ALLOWED_HOSTS = [
+        'cotton-stress-lab.us',
+        'www.cotton-stress-lab.us',
+        '143.198.148.168',
+        ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

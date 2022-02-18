@@ -96,35 +96,35 @@ def parse_met_vars(owm_data):
     return cln_obs
 
 
-if __name__ == '__main__':
-    
-    with open('/home/will/crop-modeling-site/metload/owm_api_key.txt') as f:
-        API_KEY = f.read().splitlines()[0]
-
-        appid = API_KEY
-        latitude = 33.577862
-        longitude = -101.855171
-        count = 50
-
-        params = {
-            'lat': latitude,
-            'lon': longitude,
-            'city_count': count,
-            'APPID': appid,
-            'units': 'imperial',
-        }
-
-        region_data_and_info, data_request_time = region_info(**params)
-        #{'message': 'accurate', 'cod': '200', 'count': 50, 'list': [{'id': 5525577, 'name': 'Lubbock', 'coord': 
-        message = region_data_and_info['message']
-        cod = region_data_and_info['cod']
-        count = region_data_and_info['count']
-        my_list = region_data_and_info['list']
-        print(f'[INFO] Message:{message}')
-        print(f'[INFO] Response code:{cod}')
-        print(f'[INFO] Response count:{count}')
-        for l in my_list:
-            print(f"[INFO] ID: {l['id']}  Lat:{l['coord']['lat']:.4f}  Lon:{l['coord']['lon']:.4f}  Name: {l['name']}")
+#if __name__ == '__main__':
+#    
+#    with open('/home/will/crop-modeling-site/metload/owm_api_key.txt') as f:
+#        API_KEY = f.read().splitlines()[0]
+#
+#        appid = API_KEY
+#        latitude = 33.577862
+#        longitude = -101.855171
+#        count = 50
+#
+#        params = {
+#            'lat': latitude,
+#            'lon': longitude,
+#            'city_count': count,
+#            'APPID': appid,
+#            'units': 'imperial',
+#        }
+#
+#        region_data_and_info, data_request_time = region_info(**params)
+#        #{'message': 'accurate', 'cod': '200', 'count': 50, 'list': [{'id': 5525577, 'name': 'Lubbock', 'coord': 
+#        message = region_data_and_info['message']
+#        cod = region_data_and_info['cod']
+#        count = region_data_and_info['count']
+#        my_list = region_data_and_info['list']
+#        print(f'[INFO] Message:{message}')
+#        print(f'[INFO] Response code:{cod}')
+#        print(f'[INFO] Response count:{count}')
+#        for l in my_list:
+#            print(f"[INFO] ID: {l['id']}  Lat:{l['coord']['lat']:.4f}  Lon:{l['coord']['lon']:.4f}  Name: {l['name']}")
             
 
 
