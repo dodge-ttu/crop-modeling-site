@@ -9,4 +9,4 @@ payload = {
         'met_key':met_key,
         }
 
-r = requests.get('http://143.198.148.168:8000/metload/1295849198091283497812893972193748912379', params=payload)
+r = requests.get('https://cotton-stress-lab.us/metload/1295849198091283497812893972193748912379', params=payload)
